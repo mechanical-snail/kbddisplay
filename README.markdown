@@ -21,3 +21,7 @@ To do @@@@@
 * Write the actual program that generates the XML.
 * Replace the CSS with XSL, for more flexibility?
 * Display the Unicode code number in small font underneath the caption (rather than only in the tooltip) so you can see it if you print it out
+
+Caveats
+====
+* Currently it doesn’t actually work, since browsers don’t implement CSS 3’s `attr()` function.
