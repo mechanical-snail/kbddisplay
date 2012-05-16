@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="kbddisplay.css"?>
+<kbd>
+	<row>
+		<unikey width="7em" type="modifier">Shift</unikey>
+		<key>
+			<kc title="U+0067 LATIN SMALL LETTER G">g</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">G</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">γ</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">Γ</kc>
+		</key>
+		<key>
+			<kc title="U+0068 LATIN SMALL LETTER H">h</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">H</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">η</kc>
+			<kc title="U+nnnn UNICODE CHARACTER NAME">Η</kc>
+		</key>
+	</row>
+	<row>
+		<spacer width="2.5em" />
+		<unikey width="3em" type="modifier">Ctrl</unikey>
+		<unikey width="2em" type="modifier">Win</unikey>
+		<unikey width="2.5em" type="modifier">Alt</unikey>
+		<key width="13em">
+			<kc title="U+0020 SPACE"> </kc>
+			<kc title="U+0020 SPACE"> </kc>
+			<kc title="U+0020 SPACE"> </kc>
+			<kc title="U+0020 SPACE"> </kc>
+		</key>
+		<unikey width="2.5em" type="modifier">AltGr</unikey>
+		<unikey width="2.5em" type="action">Menu</unikey>
+	</row>
+</kbd>

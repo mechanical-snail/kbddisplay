@@ -1,0 +1,103 @@
+/*
+To generate a keyboard, output an XML file similar to the example, using e.g. a Python script.
+
+First, look up each character in the unicode database to get its name (this, with the code number, goes in the title attribute of <kc>). Write the character itself into the contents of <kc>, preceded by 'a' if it is a combining character.
+*/
+
+kbd
+{
+	display: table;
+	margin: 10pt;
+	background-color: #ddd;
+	font-family: "DejaVu Sans", sans;
+	font-size: 1em;
+	border-spacing: 2pt;
+}
+
+/* Basic definitions for all types of keys */
+
+row {
+	display: table-row;
+	height: 2.5em;
+}
+
+spacer[width], unikey[width] {
+	width: attr(width);
+}
+spacer:not([width]):before, unikey:not([width]):before {
+	content: "Error: you forgot to specify the width of this spacer/unikey";
+	background-color: yellow;
+	color: red;
+	font-weight: bold;
+	border: 1px solid red;
+}
+spacer {
+	display: inline-block;
+}
+
+unikey, key {
+	display: inline-block /* position:relative doesn't work with table-cell apparently */;
+	position: relative /* allows positioning children relative to the borders of this element */;
+	border: 1px solid black;/*@@@@ make it look more key-like*/
+	border-radius: 5pt;
+	height: 2.5em;
+}
+
+/* Keys with only 1 caption, e.g. modifier keys */
+unikey {
+	/*display: table-cell;@@@@@*/ /* needed to get vertical-align to work */
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+	white-space: normal;
+}
+
+/* Regular keys, with 4 labels */
+key[width] {
+	width: attr(width);
+}
+key:not([width]) {
+	/* default */
+	width: 2.5em;
+}
+
+/* Key captions */
+kc {
+	padding: 2pt;
+	position: absolute;
+	white-space: pre;
+}
+
+/* Captions for regular keys */
+key > kc:nth-child(1), key > kc:nth-child(2) {
+	left: 0;
+}
+key > kc:nth-child(3), key > kc:nth-child(4) {
+	right: 0;
+}
+key > kc:nth-child(1), key > kc:nth-child(3) {
+	bottom: 0;
+}
+key > kc:nth-child(2), key > kc:nth-child(4) {
+	top: 0;
+}
+
+/* doesn't work
+unikey > kc {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+*/
+
+/* Color the various key types */
+unikey:not([type]), key:not([type]) {
+	background-color: #adf;
+}
+unikey[type="modifier"], key[type="modifier"] {
+	background-color: #fc5;
+}
+unikey[type="action"], key[type="action"] {
+	background-color: #ff5;
+}
